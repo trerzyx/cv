@@ -1,6 +1,15 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app/app.component';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+import { MathjaxModule } from "mathjax-angular";
+
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [MathjaxModule.forRoot(/*Optional Config*/)],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+ 
+export class AppModule {}
+
