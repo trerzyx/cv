@@ -1,15 +1,6 @@
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app/app.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { MathjaxModule } from "mathjax-angular";
+import { AppModule } from './app/app.module';
 
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [MathjaxModule.forRoot(/*Optional Config*/)],
-  providers: [],
-  bootstrap: [AppComponent],
-})
- 
-export class AppModule {}
-
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
